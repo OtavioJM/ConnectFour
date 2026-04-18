@@ -1,5 +1,6 @@
 namespace ConnectFour
 {
+    // Base class for any player
     public abstract class Player
     {
         public string Name { get; set; }
@@ -11,11 +12,12 @@ namespace ConnectFour
             Symbol = symbol;
         }
 
+        // Each player type decides how to pick a column
         public abstract int ChooseColumn(Board board);
 
         public override string ToString()
         {
-            return $"{Name} ({Symbol})";
+            return Name + " (" + Symbol + ")";
         }
     }
 }
